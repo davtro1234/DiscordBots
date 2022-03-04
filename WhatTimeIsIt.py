@@ -32,6 +32,13 @@ youtube = build('youtube', 'v3', developerKey=YT_KEY)
 #Enables bot commands
 bot = commands.Bot(command_prefix='$', intents = intents)
 
+#Assign users in a specified server a specific role
+@bot.event
+async def on_member_join(member):
+    server = bot.get_guild(949085413555974204)
+    role = server.get_role(949092377161793627)
+    await member.add_roles(role)
+
 #Creates a list of possible Hour and Minutes digits
 T1=np.linspace(1,12,12)
 T2=np.linspace(0,5,6)
