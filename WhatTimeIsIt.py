@@ -1,8 +1,7 @@
 import os
 import discord
 from discord import Intents
-from discord.ext import commands
-from discord.ext import tasks
+from discord.ext import *
 from dotenv import load_dotenv
 import numpy as np
 import math
@@ -76,48 +75,6 @@ for i in range(0,12):
         j+=1
     i+=1
 
-#Adds some fancy easter eggs to the list of times
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("too late to apologize (it’s too late)")
-t.append("time to get some bitches")
-t.append("time to get some bitches")
-t.append("time to get some bitches")
-t.append("time to get some bitches")
-t.append("time to get some bitches")
-t.append("time to get some bitches")
-t.append("time to get some bitches")
-t.append("time to get some bitches")
-t.append("time to get some bitches")
-t.append("time to get some bitches")
-t.append("time to get some bitches")
-t.append("time to get some bitches")
-t.append("time to get some bitches")
-t.append("\n\u1CBC                        1 2 \n                11         ^         1 \n      10                  |                2 \n                            |\n 9                       ⊙-----------> Despacito'clock \n\n       8                                   4 \n                 7                   5 \n                            6                                                            ")
-t.append("\n\u1CBC                        1 2 \n                11         ^         1 \n      10                  |                2 \n                            |\n 9                       ⊙-----------> Despacito'clock \n\n       8                                   4 \n                 7                   5 \n                            6                                                            ")
-t.append("\n\u1CBC                        1 2 \n                11         ^         1 \n      10                  |                2 \n                            |\n 9                       ⊙-----------> Despacito'clock \n\n       8                                   4 \n                 7                   5 \n                            6                                                            ")
-t.append("\n\u1CBC                        1 2 \n                11         ^         1 \n      10                  |                2 \n                            |\n 9                       ⊙-----------> Despacito'clock \n\n       8                                   4 \n                 7                   5 \n                            6                                                            ")
-t.append("\n\u1CBC                        1 2 \n                11         ^         1 \n      10                  |                2 \n                            |\n 9                       ⊙-----------> Despacito'clock \n\n       8                                   4 \n                 7                   5 \n                            6                                                            ")
-t.append("\n\u1CBC                        1 2 \n                11         ^         1 \n      10                  |                2 \n                            |\n 9                       ⊙-----------> Despacito'clock \n\n       8                                   4 \n                 7                   5 \n                            6                                                            ")
-t.append("\n\u1CBC                        1 2 \n                11         ^         1 \n      10                  |                2 \n                            |\n 9                       ⊙-----------> Despacito'clock \n\n       8                                   4 \n                 7                   5 \n                            6                                                            ")
-t.append("\n\u1CBC                        1 2 \n                11         ^         1 \n      10                  |                2 \n                            |\n 9                       ⊙-----------> Despacito'clock \n\n       8                                   4 \n                 7                   5 \n                            6                                                            ")
-t.append("\n\u1CBC                        1 2 \n                11         ^         1 \n      10                  |                2 \n                            |\n 9                       ⊙-----------> Despacito'clock \n\n       8                                   4 \n                 7                   5 \n                            6                                                            ")
-t.append("\n\u1CBC                        1 2 \n                11         ^         1 \n      10                  |                2 \n                            |\n 9                       ⊙-----------> Despacito'clock \n\n       8                                   4 \n                 7                   5 \n                            6                                                            ")
-
 merd = ['AM', 'PM']
 
 #Prints a list of all servers the bot is connected to when on startup
@@ -143,13 +100,6 @@ async def time(ctx):
    response = "It is currently" + " " + str(time) + " " + merd2
    await ctx.send(response)
 
-#Secret command with an invisble character to return the correct time
-@bot.command(name='time\u1CBC')
-async def timer(ctx):
-    now = datetime.now()
-    current_time = now.strftime('%I:%M %p')
-    response =("It is currently " + current_time)
-    await ctx.send(response)
 
 #Tracks Toontown invasion status
 @bot.command(name='inv')
@@ -165,14 +115,6 @@ async def inv(ctx):
         response += '```'
         await ctx.send(response)
 
-#Checks if the actual shrimp bot 
-@bot.command(name='shrimp')
-async def shrimp(ctx):
-    try:
-        if ctx.guild.get_member(925895595334438953).raw_status != "online":
-           await ctx.send("The Shrimp Boat Has Left")
-    except:
-        return
 
 #Gets a random picture from the top 50 list on r/shrimptank and combines it with a quote
 @bot.command(name='shrimper')
